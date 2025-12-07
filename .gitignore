@@ -14,3 +14,13 @@ venv/
 data/raw/
 .vscode/
 .env
+# LaTeX build files
+*.aux
+*.log
+*.toc
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.pdf 
+# (Opcional ignorar PDF: geralmente não versionamos binários gerados, apenas o código fonte)
