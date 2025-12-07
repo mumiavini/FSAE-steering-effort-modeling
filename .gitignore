@@ -1,0 +1,16 @@
+Lenkungshandbuch.pdf
+Help_File_OptimumG.pdf
+F7-Steering-Rack_with-Rotary-Sensor.pdf
+Lenkkräfte_analyse_SRe23.xlsx
+Plotar Direçao.py
+Suspensão e Direção FSAE 2025.docx
+Direção FSAE 2026.docx
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+*.csv
+data/raw/
+.vscode/
+.env
