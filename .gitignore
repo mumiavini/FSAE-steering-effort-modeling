@@ -16,6 +16,8 @@ data/raw/
 .env
 *.xlsx
 # LaTeX build files
+*.bbl
+*.blg
 *.aux
 *.log
 *.toc

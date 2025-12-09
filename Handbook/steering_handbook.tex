@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}      % Codificação de saída da fonte (Importante!)
 \usepackage[utf8]{inputenc}   % CORREÇÃO: É 'utf8' (sem hífen)
 \usepackage[english]{babel}   % Idioma do documento (para hifenização correta)
+\usepackage{float} % Opcional, mas recomendo MUITO (explico abaixo)
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -14,8 +15,10 @@
 
 % --- Metadados ---
 \title{Steering Effort Calculation and Validation Handbook}
-\author{Vinicius Trento - PUCPR Racing}
+\author{Vinicius Andrade Trento}
 \date{\today}
+
+
 
 % --- Cabeçalho e Rodapé ---
 \pagestyle{fancy}
@@ -24,25 +27,40 @@
 \fancyhead[R]{Vinicius Trento - PUCPR Racing}
 \fancyfoot[C]{\thepage} % Numeração de página no centro do rodapé
 
+
 \begin{document}
 
 \maketitle
 
 \tableofcontents
+\vspace{4cm}
 % O comando \newpage não é estritamente necessário aqui pois \chapter já quebra página, 
 % mas não faz mal mantê-lo se quiser garantir uma página em branco extra.
+
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=0.3\textwidth]{Images/logo_equipe.png}
+    % \caption{a}
+\end{figure}
 
 \chapter{Introduction}
 \section{Purpose}
 This handbook documents the steering effort calculation and validation procedures for the FSAE26 vehicle. It provides comprehensive guidelines for analyzing steering system performance and ensuring design requirements are met.
 
 \section{Scope}
+
 \begin{itemize}
     \item Steering system analysis methodology
     \item Calculation procedures and formulas
     \item Validation testing protocols
     \item Performance benchmarks
 \end{itemize}
+
+\section{Methodology}
+The steering effort is calculated based on vehicle dynamics principles, considering factors such as tire forces, steering geometry, and driver input. Validation is performed through controlled testing to compare calculated values with real-world measurements. 
+
+As explained by Pfeffer and Harrer \cite{Lenkungshandbuch}, the steering system's performance is critical for vehicle handling and driver comfort, playing a crucial role in lateral dynamics. This handbook follows established engineering practices to ensure accurate and reliable results.
+
 
 \chapter{Steering System Overview}
 \section{System Components}
@@ -54,8 +72,7 @@ Outline the steering effort targets and constraints.
 \chapter{Calculation Methodology}
 \section{Theory and Formulas}
 Document the mathematical foundations for steering effort calculations. 
-% Exemplo de como você pode inserir uma fórmula relevante para direção:
-% Align torque equation example
+
 \begin{equation}
     M_z = F_y \cdot (n_m + n_p) \cdot \cos(\lambda)
 \end{equation}
@@ -70,5 +87,8 @@ Define validation testing methods and acceptance criteria.
 \chapter{Results and Analysis}
 \section{Data Presentation}
 Present calculation results and validation findings.
+
+\bibliographystyle{IEEEtran} % ou abntex, plain, IEEEtran
+\bibliography{references.bib}
 
 \end{document}
