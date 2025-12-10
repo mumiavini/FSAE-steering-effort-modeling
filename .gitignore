@@ -24,6 +24,5 @@ data/raw/
 *.out
 *.synctex.gz
 *.fdb_latexmk
-*.fls
-*.pdf 
+*.fls 
 # (Opcional ignorar PDF: geralmente não versionamos binários gerados, apenas o código fonte)
