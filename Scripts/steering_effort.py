@@ -9,7 +9,7 @@ dynamic_wheel_radius = 0.23 # meters
 kpi_angle = 10.0 # degrees
 scrub_radius = 0.010 # meters
 
-# Steering System Parameters    
+# Steering System Parameters 
 pinion_radius = 0.022 # meters
 steering_arm_length = 0.170 # meters
 
@@ -19,13 +19,13 @@ pinion_moment_of_inertia = 0.000629 # Resistance to rotation in Z, from pinion C
 rack_mass = 0.587 # Kg
 
 # for static friction
-tire_pressure = 0.83 # bar (ex: 12 PSI)
+tyre_pressure = 0.83 # bar (ex: 12 PSI)
 pneumatic_trail = 0.025
 
 # Analysis Scenario Parameters
 lateral_acceleration = 0 * 9.81 # m/s^2. IMPORTANT: Keep at 0 for stationary car analysis.
 estimated_system_friction = 4 # Nm (internal mechanical friction of the steering system)
-average_wheel_steer_angle = 70 # degrees (angle for which the effort will be calculated)
+average_wheel_steer_angle = 34.4 # degrees (angle for which the effort will be calculated)
 
 
 # --- 2. CALCULATIONS ---
@@ -45,12 +45,12 @@ if lateral_acceleration == 0:
     # --- SCENARIO: STATIONARY CAR ---
     
     # 1. Calculate Scrub Torque (Resistive)
-    static_friction_coeff_tire_ground = 1.4 # Dimensionless (value for rubber on dry asphalt, static)
-    tire_pressure_pascal = tire_pressure * 100000
-    estimated_contact_patch_area = vertical_load_per_wheel / tire_pressure_pascal # m^2
+    static_friction_coeff_tyre_ground = 1.4 # Dimensionless (value for rubber on dry asphalt, static)
+    tyre_pressure_pascal = tyre_pressure * 100000
+    estimated_contact_patch_area = vertical_load_per_wheel / tyre_pressure_pascal # m^2
     estimated_patch_radius = math.sqrt(estimated_contact_patch_area / math.pi) # m
     
-    scrub_torque_per_wheel = (2/3) * static_friction_coeff_tire_ground * vertical_load_per_wheel * estimated_patch_radius # Nm
+    scrub_torque_per_wheel = (2/3) * static_friction_coeff_tyre_ground * vertical_load_per_wheel * estimated_patch_radius # Nm
 
     # 2. Calculate Jacking Moment (Restoring/Opposes the pilot)
     jacking_moment_per_wheel = vertical_load_per_wheel * (scrub_radius * math.tan(kpi_rad) + mechanical_trail * math.tan(caster_rad)) * math.sin(steer_angle_rad)
