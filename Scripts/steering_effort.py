@@ -1,20 +1,20 @@
 import math
 
 # --- 1. INPUT PARAMETERS ---
-# Vehicle and Suspension Parameters (your previous values)
-total_vehicle_mass = 376  # kg
+# Vehicle and Suspension Parameters 
+total_vehicle_mass = 320  # kg with driver (target mass for 2026 FSAE car)
 front_weight_distribution = 0.5
 caster_angle = 4.0  # degrees
 dynamic_wheel_radius = 0.23 # meters
 kpi_angle = 10.0 # degrees
-scrub_radius = 0.035 # meters
+scrub_radius = 0.010 # meters
 
-# Steering System Parameters (your previous values)
-pinion_radius = 0.04 # meters
+# Steering System Parameters    
+pinion_radius = 0.022 # meters
 steering_arm_length = 0.170 # meters
 
 # Parameters for Inertia Calculation
-pinion_mass = 0.851 # Kg
+pinion_mass = 0.750 # Kg
 pinion_moment_of_inertia = 0.000629 # Resistance to rotation in Z, from pinion CAD
 rack_mass = 0.587 # Kg
 
@@ -25,7 +25,7 @@ pneumatic_trail = 0.025
 # Analysis Scenario Parameters
 lateral_acceleration = 0 * 9.81 # m/s^2. IMPORTANT: Keep at 0 for stationary car analysis.
 estimated_system_friction = 4 # Nm (internal mechanical friction of the steering system)
-average_wheel_steer_angle = 38.77 # degrees (angle for which the effort will be calculated)
+average_wheel_steer_angle = 70 # degrees (angle for which the effort will be calculated)
 
 
 # --- 2. CALCULATIONS ---

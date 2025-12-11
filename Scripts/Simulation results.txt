@@ -1,0 +1,129 @@
+import math
+
+# --- 1. INPUT PARAMETERS ---
+# Vehicle and Suspension Parameters 
+total_vehicle_mass = 376  # kg with driver (target mass for 2026 FSAE car)
+front_weight_distribution = 0.5
+caster_angle = 4.0  # degrees
+dynamic_wheel_radius = 0.23 # meters
+kpi_angle = 10.0 # degrees
+scrub_radius = 0.035 # meters
+
+# Steering System Parameters    
+pinion_radius = 0.040 # meters
+steering_arm_length = 0.170 # meters
+
+# Parameters for Inertia Calculation
+pinion_mass = 0.851 # Kg
+pinion_moment_of_inertia = 0.000629 # Resistance to rotation in Z, from pinion CAD
+rack_mass = 0.587 # Kg
+
+# for static friction
+tire_pressure = 0.83 # bar (ex: 12 PSI)
+pneumatic_trail = 0.025
+
+# Analysis Scenario Parameters
+lateral_acceleration = 0 * 9.81 # m/s^2. IMPORTANT: Keep at 0 for stationary car analysis.
+estimated_system_friction = 4 # Nm (internal mechanical friction of the steering system)
+average_wheel_steer_angle = 70 # degrees (angle for which the effort will be calculated)
+
+--- STEERING EFFORT ANALYSIS (Scenario: Stationary Car) ---
+Analyzed Steer Angle: 70.0°
+----------------------------------------------------------------------        
+Decomposition of Moments (per wheel):
+  - Moment of Inertia (Resistive): 0.0016 kg x m²
+  - Scrub Torque (Resistive): 51.18 Nm
+  - Jacking Moment (Restoring): 6.32 Nm
+  - RESULTANT MOMENT to be overcome at the kingpin: 57.50 Nm
+----------------------------------------------------------------------        
+Final Result (Stationary Car):
+  - Steering Wheel Effort (without internal friction): 27.06 Nm
+  - Total Steering Wheel Effort (with internal friction): 31.06 Nm
+---------------------------------------------------------------------- 
+
+
+import math
+
+# --- 1. INPUT PARAMETERS ---
+# Vehicle and Suspension Parameters 
+total_vehicle_mass = 320  # kg with driver (target mass for 2026 FSAE car)
+front_weight_distribution = 0.5
+caster_angle = 4.0  # degrees
+dynamic_wheel_radius = 0.23 # meters
+kpi_angle = 10.0 # degrees
+scrub_radius = 0.010 # meters
+
+# Steering System Parameters    
+pinion_radius = 0.040 # meters
+steering_arm_length = 0.170 # meters
+
+# Parameters for Inertia Calculation
+pinion_mass = 0.851 # Kg
+pinion_moment_of_inertia = 0.000629 # Resistance to rotation in Z, from pinion CAD
+rack_mass = 0.587 # Kg
+
+# for static friction
+tire_pressure = 0.83 # bar (ex: 12 PSI)
+pneumatic_trail = 0.025
+
+# Analysis Scenario Parameters
+lateral_acceleration = 0 * 9.81 # m/s^2. IMPORTANT: Keep at 0 for stationary car analysis.
+estimated_system_friction = 4 # Nm (internal mechanical friction of the steering system)
+average_wheel_steer_angle = 70 # degrees (angle for which the effort will be calculated)
+
+
+--- STEERING EFFORT ANALYSIS (Scenario: Stationary Car) ---
+Analyzed Steer Angle: 70.0°
+----------------------------------------------------------------------        
+Decomposition of Moments (per wheel):
+  - Moment of Inertia (Resistive): 0.0016 kg x m²
+  - Scrub Torque (Resistive): 40.18 Nm
+  - Jacking Moment (Restoring): 2.13 Nm
+  - RESULTANT MOMENT to be overcome at the kingpin: 42.31 Nm
+----------------------------------------------------------------------        
+Final Result (Stationary Car):
+  - Steering Wheel Effort (without internal friction): 19.91 Nm
+  - Total Steering Wheel Effort (with internal friction): 23.91 Nm
+---------------------------------------------------------------------- 
+
+# --- 1. INPUT PARAMETERS ---
+# Vehicle and Suspension Parameters 
+total_vehicle_mass = 320  # kg with driver (target mass for 2026 FSAE car)
+front_weight_distribution = 0.5
+caster_angle = 4.0  # degrees
+dynamic_wheel_radius = 0.23 # meters
+kpi_angle = 10.0 # degrees
+scrub_radius = 0.010 # meters
+
+# Steering System Parameters    
+pinion_radius = 0.022 # meters
+steering_arm_length = 0.170 # meters
+
+# Parameters for Inertia Calculation
+pinion_mass = 0.750 # Kg
+pinion_moment_of_inertia = 0.000629 # Resistance to rotation in Z, from pinion CAD
+rack_mass = 0.587 # Kg
+
+# for static friction
+tire_pressure = 0.83 # bar (ex: 12 PSI)
+pneumatic_trail = 0.025
+
+# Analysis Scenario Parameters
+lateral_acceleration = 0 * 9.81 # m/s^2. IMPORTANT: Keep at 0 for stationary car analysis.
+estimated_system_friction = 4 # Nm (internal mechanical friction of the steering system)
+average_wheel_steer_angle = 70 # degrees (angle for which the effort will be calculated)
+
+
+--- STEERING EFFORT ANALYSIS (Scenario: Stationary Car) ---
+Analyzed Steer Angle: 70.0°
+----------------------------------------------------------------------        
+Decomposition of Moments (per wheel):
+  - Moment of Inertia (Resistive): 0.0009 kg x m²
+  - Scrub Torque (Resistive): 40.18 Nm
+  - Jacking Moment (Restoring): 2.13 Nm
+  - RESULTANT MOMENT to be overcome at the kingpin: 42.31 Nm
+----------------------------------------------------------------------        
+Final Result (Stationary Car):
+  - Steering Wheel Effort (without internal friction): 10.95 Nm
+  - Total Steering Wheel Effort (with internal friction): 14.95 Nm
+----------------------------------------------------------------------  

@@ -319,6 +319,84 @@ Reducing the caster angle ($\nu$) will decrease the mechanical trail ($t_{mech}$
 
 \textbf{Trade-off:} A lower caster angle can reduce straight-line stability and self-centering behavior of the steering, which may negatively impact high-speed handling.
 
+\subsubsection{Final Considerations}
+\section{Simulation of Improved Scenarios}
+
+Following the proposed modifications, two improvement scenarios were simulated using the Python analytical model. The goal was to verify if the changes could bring the steering effort down to the target of 15 Nm.
+
+\subsection{Scenario A: Geometry Optimization and Weight Reduction}
+
+In this first iteration, the focus was on reducing the resistive moments generated at the tire contact patch. 
+Two major changes were implemented in the parameters:
+\begin{enumerate}
+    \item \textbf{Vehicle Mass Reduction:} Updated to the 2026 target weight of 320 kg (implying less vertical load $F_Z$).
+    \item \textbf{Scrub Radius Minimization:} Reduced from 35 mm to 10 mm to lower the scrub torque.
+\end{enumerate}
+
+The updated input parameters for this scenario are presented in Table \ref{tab:scenario_a}.
+
+\begin{table}[htbp] 
+    \centering
+    \caption{Scenario A: Optimized Suspension Parameters}
+    \label{tab:scenario_a}
+    \renewcommand{\arraystretch}{1.2} 
+    
+    \begin{tabular}{lccl} 
+        \toprule
+        \rowcolor[HTML]{EFEFEF} 
+        \textbf{Parameter} & \textbf{Symbol} & \textbf{Value [Unit]} & \textbf{Change Status} \\ 
+        \midrule
+        Total Vehicle Mass & $m_{total}$ & 320 [kg] & \textbf{Reduced (-15\%)} \\
+        Scrub Radius       & $r_{scrub}$ & 10 [mm]  & \textbf{Reduced (-71\%)} \\
+        Caster Angle       & $\nu$       & 4.0 [deg] & Unchanged \\
+        KPI Angle          & $\sigma$    & 10.0 [deg]& Unchanged \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\textbf{Results for Scenario A:}
+Running the simulation with these parameters resulted in a calculated steering effort of \textbf{23.91 Nm}.
+\begin{itemize}
+    \item The scrub torque ($M_{scrub}$) dropped significantly from $\approx$ 51 Nm to 40.18 Nm due to the lower vertical load and reduced lever arm.
+    \item Although this represents a substantial improvement over the baseline (31.06 Nm), it is still above the 15 Nm target. This indicates that geometry optimization alone is insufficient without mechanical advantage changes.
+\end{itemize}
+
+\subsection{Scenario B: Steering Ratio Adjustment}
+
+Building upon the geometric optimizations of Scenario A, the second iteration focused on the steering system's mechanical advantage. The pinion radius was reduced to increase the overall steering ratio ($i_S$).
+
+The modifications for this scenario are detailed in Table \ref{tab:scenario_b}.
+
+\begin{table}[htbp] 
+    \centering
+    \caption{Scenario B: Steering System Modifications}
+    \label{tab:scenario_b}
+    \renewcommand{\arraystretch}{1.2} 
+    
+    \begin{tabular}{lccl} 
+        \toprule
+        \rowcolor[HTML]{EFEFEF} 
+        \textbf{Parameter} & \textbf{Symbol} & \textbf{Value [Unit]} & \textbf{Change Status} \\ 
+        \midrule
+        Pinion Radius  & $r_{pinion}$ & 22 [mm] & \textbf{Reduced (Higher Ratio)}\\
+        Steering Arm   & $L_{arm}$    & 170 [mm]  & Unchanged\\
+        Pinion Mass    & $m_{pinion}$ & 0.750 [kg] & Updated CAD estimation \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\textbf{Results for Scenario B:}
+With the reduction of the pinion radius from 40 mm to 22 mm, the simulation yielded a final steering effort of \textbf{14.95 Nm}.
+
+\begin{itemize}
+    \item \textbf{Target Achievement:} This value successfully meets the design target of $\leq$ 15 Nm.
+    \item \textbf{Trade-off Analysis:} While the effort is now within the desired range, the smaller pinion results in a "slower" steering response. The driver will require more steering wheel rotation to achieve the same wheel angle. However, given the high forces involved in static steering, this is deemed an acceptable compromise to prevent driver fatigue.
+\end{itemize}
+
+\section{Conclusion of Simulations}
+The analytical validation confirms that a combination of \textbf{weight reduction}, \textbf{scrub radius minimization} (down to 10 mm), and \textbf{increasing the steering ratio} (pinion radius of 22 mm) allows the FSAE26 vehicle to achieve a comfortable static steering effort of 14.95 Nm, validating the proposed design changes.
+
+
 \bibliographystyle{IEEEtran} % ou abntex, plain, IEEEtran
 \bibliography{references.bib}
 
